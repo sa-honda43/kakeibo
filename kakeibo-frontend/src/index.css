@@ -11,8 +11,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -108,4 +108,59 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* Chrome, Safari, Edge, Opera のスピンボタン（上下矢印）を消す */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox のスピンボタン（上下矢印）を消す */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* 角丸テーブル用のスタイル */
+.rounded-table {
+  width: 100%;
+  border-collapse: separate; /* 角丸を効かせるために必要 */
+  border-spacing: 0; /* 枠線の隙間をなくす */
+  border: 1px solid #ccc; /* 外枠の線 */
+  border-radius: 8px; /* 角の丸み（数値で調整可能） */
+  overflow: hidden; /* ヘッダーや背景色が角からはみ出るのを防ぐ */
+  text-align: center;
+}
+
+/* 内側の枠線設定 */
+.rounded-table th,
+.rounded-table td {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 8px 4px;
+}
+
+/* 一番右の列は右枠線を消す（重なり防止） */
+.rounded-table th:last-child,
+.rounded-table td:last-child {
+  border-right: none;
+}
+
+/* 一番下の行は下枠線を消す（重なり防止） */
+.rounded-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* テーブル内のすべての input と select に一括でスタイルを適用 */
+.rounded-table input,
+.rounded-table select {
+  width: 95%;
+  padding: 4px 2px;
+  box-sizing: border-box;
+}
+
+/* 金額入力欄など、右寄せにしたい場合専用のクラス（任意） */
+.text-right {
+  text-align: right;
 }
