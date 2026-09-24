@@ -30,7 +30,7 @@ export function useAuth() {
         setIsLoggedIn(true);
         setLoginId("");
         setPassword("");
-        navigate("/dashboard");
+        navigate("/top");
       } else {
         const errorData = await response.json();
         setLoginError(errorData.message || "ログインに失敗しました");
